@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Urban Sprout</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="././images/gardenforge1.png">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    </head>
+    <style>
+        /*Internal CSS for Homepage */
+        /* css for image in home page */
+        .image{
+            border-radius: 50px;
+        }
+        /* css to add text in the image */
+        #image {
+            position: relative;
+            width: 100%;
+        }
+
+        #image img {
+            display: block;
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        #image p,
+        #image h4,
+        #image h2,
+        #image h6 {
+            position: absolute;
+            z-index: 2;
+            color: #FFFFFF;
+            margin: 0;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+        }
+
+        /* Position each text element individually */
+        #image p  {
+            top: 80px;  
+            left: 40px; 
+            font-size: 18px;
+        }
+        #image h4 {
+            top: 120px; 
+            left: 40px; 
+            font-size: 22px;
+        }
+        #image h2 {
+            top: 160px; 
+            left: 40px; 
+            font-size: 36px;
+        }
+        #image h6:nth-of-type(1) {
+            top: 220px; 
+            left: 40px; 
+            font-size: 18px;
+        }
+        #image h6:nth-of-type(2) {
+            top: 250px; 
+            left: 40px; 
+            font-size: 18px;
+        }
+        #add_image{
+            z-index: 1;
+        }  
+        /* CSS for read blog section */
+        #read_font{
+            text-align: center;
+            color: orange;
+        }
+        #blog-button{
+            color:orange;
+            width: 85px;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 45px;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3sm ease;
+            cursor: pointer;
+        }
+        #blog-button:hover{
+            transform: scale(1.05);
+        }
+        #show_all {
+            text-align: center;
+            text-decoration: none;
+            position: absolute;
+            top: 320px;
+            font-size: 25px;
+            left: 20px;
+            z-index: 3;
+            padding-bottom: 2px;
+            width: 120px;
+            color: #FFFFFF;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            top: 550px;
+            cursor: pointer;
+        }
+        
+        #show_all:hover{
+            transform: scale(1.1);
+        }
+
+    </style>
+    <body>
+        <section>
+        <!--navigation bar-->
+               <div>
+        <nav>
+            <div class="logo_shift">
+            <a href="Homepage.html" class="logo">
+            <img src="././images/navlogo.png" id="nav_logo" alt="logo">
+            </a>
+            </div>
+            <!--search bar section-->
+            <div id="navbar">
+                <form>
+                <input type="text" placeholder="Search....." class="search">
+                <button type="submit" id="search-button">🔍︎</button>
+                </form>
+            </div>
+            <div>
+                <!--list used for nav bar listing -->
+                <ul id="navbar">
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Research.html">Research</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+                </div>
+           </nav>
+        </div>
+        </section>
+        <!-- main section of home page -->
+        <main>
+        <!--image section for home page-->
+        <div id="image">
+        <h4>Grow Your Own </h4>
+        <h2>Sustainable Urban Gardening Solutions Today</h2>
+        <h6>Turn your balcony green 🌿 </h6>
+        <h6>With easy seed kits for city living.</h6>
+            <a href="Products.html" id="show_all">Shop Now</a>
+            <img src="././images/plant1.png" class="image" alt="Seeds" width="100%" height="600px">
+        </div>
+        <!-- Exotic plants section -->
+             <section >
+        <div>
+            <p class="text">Flash Selling Products</p>
+            <a href="Products.html" class="all">View All</a>
+        </div>
+        <div class="container block">
+            <div class="card">
+                <div class="product-image">
+                <img src="././images/monstera.png" alt="Monstera Deliciosa" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <div class="product-detail">
+                <h3 id="card-font">Monstera Deliciosa</h3>
+                <p id="card-font-price">Rs.2400</p>
+                <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.3000</del> <small>20% off</small></p>
+                </div>
+            </div>
+            <div class="card block">
+                <div class="product-image">
+                <img src="././images/fiddle.png" alt="Fiddle Leaf Fig" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <div class="product-detail">
+                <h3 id="card-font">Fiddle Leaf Fig</h3>
+                <p id="card-font-price">Rs.3000</p>
+                <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.3750</del> <small>20% off</small></p>
+                </div>
+            </div>
+            <div class="card block">
+                <div class="product-image">
+                <img src="././images/snake.png" alt="Snake Plant" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <div class="product-detail">
+                <h3 id="card-font">Snake Plant</h3>
+                <p id="card-font-price">Rs.2250</p>
+                <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.2500</del> <small>9% off</small></p>
+                </div>
+            </div>
+            <div class="card block">
+                <div class="product-image">
+                <img src="././images/Peperomia.png" alt="Peperomia" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <div class="product-detail">
+                <h3 id="card-font">Peperomia</h3>
+                <p id="card-font-price">Rs.1670</p>
+                <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.1875</del> <small>11% off</small></p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- utensils section -->
+        <section>
+            <div>
+                <p class="text">Available Utensils</p>
+                <div>
+                <div class="container block">
+                    <div class="card">
+                        <div class="product-image">
+                        <img src="././images/pruning_gloves.png" alt="Pruning Gloves" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        <div class="product-detail">
+                        <h3 id="card-font">Pruning Gloves</h3>
+                        <p id="card-font-price">Rs.600</p>
+                        <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.625</del> <small>5% off</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="product-image">
+                        <img src="././images/watering_can.png" alt="Watering Can" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        <div class="product-detail">
+                        <h3 id="card-font">Watering Can</h3>
+                        <p id="card-font-price">Rs.800</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="product-image">
+                        <img src="././images/gardensprayer.png" alt="Gardening Spray" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()" >Add to Cart</button>
+                        <div class="product-detail">
+                        <h3 id="card-font">Gardening Spray</h3>
+                        <p id="card-font-price">Rs.590</p>
+                        <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.625</del> <small>7% off</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="product-image">
+                        <img src="././images/handtrowel.png" alt="Hand Trowel" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        <div class="product-detail">
+                        <h3 id="card-font">Hand Trowel</h3>
+                        <p id="card-font-price">Rs.600</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- seeds section -->
+        <section>
+            <div>
+                <p class="text">Available Seeds</p>
+            </div>
+            <div class="container block">
+                <div class="card">
+                    <div class="product-image">
+                    <img src="././images/beans.png" alt="Beans Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Beans Seeds</h3>
+                    <p id="card-font-price">Rs.320</p>
+                    </div>
+                </div>
+                <div class ="card">
+                    <div class="product-image">
+                    <img src="././images/cucumber.png" alt="Cucumber Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Cucumber Seeds</h3>
+                    <p id="card-font-price">Rs.440</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.550</del> <small>20% off</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="product-image">
+                    <img src="././images/strawberry.png" alt="Strawberry Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Strawberry Seeds</h3>
+                    <p id="card-font-price">Rs.420</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.437</del> <small>3% off</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="product-image">
+                    <img src="././images/mint.png" alt="Mint Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Mint Seeds</h3>
+                    <p id="card-font-price">Rs.200</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.210</del> <small>5% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="banner" class="block">
+        <h2 id="read_font">Offer in all products</h2>
+        <h4 id="read_font">20% Discount</h4>
+        <a href="Products.html" id="blog-button">Shop More</a>
+    </section>
+        <section id="banner2" class="block">
+        <h2 id="read_font">Sustainable Living Tips </h2>
+        <h4 id="read_font">"Grow your own, even in a concrete jungle."</h4>
+        <a href="Blog.html" id="blog-button">Read More</a>
+    </section>
+        </main>
+        <!--footer section-->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-container1">
+                    <!--contact section-->
+                    <div class="footer-card">
+                        <a href="Contact.html" style="text-decoration: none; cursor: pointer;
+                        color: #FFFFFF;"><h3>Contact Us</h3></a>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">mail</span>
+                            <p>Email: UrbanSprout@sprout.com</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <p>Address: Pokhara, Nepal</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">phone</span>
+                            <p>Phone: +977 9785214697</p>
+                        </div>
+                    </div>
+                    <!--Links section-->
+                    <div class="footer-card">
+                        <h3>Quick links</h3>
+                        <ul class="list">
+                            <li><a href="Homepage.html" class="list-font">Home</a></li>
+                            <li><a href="Products.html" class="list-font">Products</a></li>
+                            <li><a href="Blog.html" class="list-font">Blog</a></li>
+                            <li><a href="Research.html" class="list-font">Research</a></li>
+                            <li><a href="About.html" class="list-font">About Us</a></li>
+                            <li><a href="Contact.html" class="list-font">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!--follow us section-->
+                    <div class="footer-card">
+                        <h3>Follow Us</h3>
+                        <div style="display: flex; gap: 20px;">
+                        <a id="follow-button" href="https://www.instagram.com/icp.nepal/"><img src="././images/instagram.png" style="width:40px; height:40px;"></a>
+                        <a id="follow-button" href="https://www.facebook.com/informaticscollegepkr/"><img src="././images/facebook.png" style="width:40px; height:40px;"></a>
+                        <a id="follow-button" href="https://np.linkedin.com/company/informatics-college-pokhara"><img src="././images/linkedin.png" style="width:40px; height:40px;"></a>
+                        </div>
+                    </div>
+                    <!--Company info section-->
+                    <div id="company-info-card">
+                        <a href="Homepage.html" id="company-info"><img src="././images/navlogo.png" alt="company logo" style="height: 60px; width: 180px;"></a>
+                        <p>At Urban Sprout, we believe there’s something special about caring for a garden — watching things grow, getting your hands in the soil, and creating a space you can be proud of. We’re here to make that experience easier and more enjoyable with gardening tools you can rely on. Whether you’re planting your first flowers or maintaining a garden you’ve loved for years, our tools are made to feel comfortable, last long, and help you get the job done right. For us, it’s not just about selling tools — it’s about supporting the joy of gardening and helping every customer bring their outdoor space to life.</p>
+                    </div>
+                </div>
+                <div>
+                    <p style="color: #FFFFFF; text-align: center;">&copy; 2026 Urban Sprout. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="././index.js"></script>
+    </body>
+</html>
