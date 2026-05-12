@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="././images/gardenforge1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Urban Sprout - Products</title>
+</head>
+    <body>
+        <section>
+        <!--navigation bar-->
+               <div>
+                    <nav>
+                        <div class="logo_shift">
+                            <a href="Homepage.html" class="logo">
+                            <img src="././images/navlogo.png" id="nav_logo" alt="logo">
+                            </a>
+                        </div>
+                        <!--search bar section-->
+                        <div id="navbar">
+                        <form>
+                            <input type="text" placeholder="Search....." class="search">
+                            <button type="submit" id="search-button">🔍︎</button>
+                        </form>
+                        </div>
+                    <div>
+                <ul id="navbar">
+                    <li><a id="abc" class="home" href="Homepage.html">Home</a></li>
+                    <li><a id="abc" href="Products.html">Products</a></li>
+                    <li><a id="abc" class="blog" href="Blog.html">Blog</a></li>
+                    <li><a id="abc" href="Research.html">Research</a></li>
+                    <li><a id="abc" class="about" href="About.html">About Us</a></li>
+                    <li><a id="abc" class="contact" href="Contact.html">Contact Us</a></li>
+                </ul>
+                </div>
+           </nav>
+        </div>
+        </section>
+
+        <!-- ===== PRODUCT DETAIL MODAL ===== -->
+        <div id="product-modal-overlay" onclick="closeModal(event)">
+            <!--container for overlay of product description-->
+            <div id="product-modal">
+                <!--close button action to close the popup-->
+                <button id="modal-close-btn" onclick="closeModal(null, true)">✕</button>
+                <!--div for alignment of details and image-->
+                <div id="modal-content">
+                    <!--image for overlay-->
+                    <div id="modal-image-wrap">
+                        <img id="modal-img" src="" alt="">
+                    </div>
+                    <!--products detail-->
+                    <div id="modal-info">
+                        <span id="modal-badge"></span>
+                        <h2 id="modal-name"></h2>
+                        <!--product price and discount section-->
+                        <div id="modal-price-row">
+                            <span id="modal-price"></span>
+                            <span id="modal-original-price"></span>
+                            <span id="modal-discount"></span>
+                        </div>
+                        <!--products details for care and cultivation-->
+                        <p id="modal-description"></p>
+                        <div id="modal-details-grid">
+                            <!--watering details and logo-->
+                            <div class="modal-detail-item">
+                                <span class="material-symbols-outlined">water_drop</span>
+                                <div>
+                                    <strong>Watering</strong>
+                                    <p id="modal-watering"></p>
+                                </div>
+                            </div>
+                            <!--Sunlight details and logo-->
+                            <div class="modal-detail-item">
+                                <span class="material-symbols-outlined">wb_sunny</span>
+                                <div>
+                                    <strong>Sunlight</strong>
+                                    <p id="modal-sunlight"></p>
+                                </div>
+                            </div>
+                            <!--Product category and logo-->
+                            <div class="modal-detail-item">
+                                <span class="material-symbols-outlined">category</span>
+                                <div>
+                                    <strong>Category</strong>
+                                    <p id="modal-category"></p>
+                                </div>
+                            </div>
+                            <!--availibility of product-->
+                            <div class="modal-detail-item">
+                                <span class="material-symbols-outlined">verified</span>
+                                <div>
+                                    <strong>In Stock</strong>
+                                    <p id="modal-stock"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Add to cart button increment and decrement section-->
+                        <div id="modal-qty-row">
+                            <label>Quantity:</label>
+                            <div id="qty-controls">
+                                <button onclick="changeQty(-1)">−</button>
+                                <span id="qty-display">1</span>
+                                <button onclick="changeQty(1)">+</button>
+                            </div>
+                        </div>
+                        <!--add to cart button function-->
+                        <button id="modal-add-to-cart" onclick="modalAddToCart()">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- main section of products page -->
+    <main>
+        <!--first section-->
+        <section>
+            <div>
+                <h3 class="font">Our Products</h3>
+            </div>
+            <div class="container block">
+                <div class="card" onclick="openModal('Monstera Deliciosa','././images/monstera.png','Rs.2440','Rs.3050','20','A stunning tropical plant with iconic split leaves. Perfect for bringing bold, jungle-inspired energy to any indoor space.','Twice a week','Indirect bright light','Indoor Plants','12 in stock')"><!--Passing value to the parameters-->
+                    <div class="product-image">
+                    <img src="././images/monstera.png" alt="Monstera Deliciosa" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Monstera Deliciosa</h3>
+                    <p id="card-font-price">Rs.2440</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.3050</del> <small>20% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Gardening Sprayer','././images/gardensprayer.png','Rs.590','Rs.625','7','A lightweight, ergonomic garden sprayer ideal for misting plants, applying pesticides, or watering delicate seedlings.','As needed','N/A','Tools & Equipment','18 in stock')">
+                    <div class="product-image">
+                    <img src="././images/gardensprayer.png" alt="Garden Sprayer" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-details">
+                    <h3 id="card-font">Gardening Sprayer</h3>
+                    <p id="card-font-price">Rs.590</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.625</del> <small>7% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Fiddle Leaf Fig','././images/fiddle.png','Rs.3000','Rs.3750','20','A bold, statement houseplant with large, glossy leaves. Thrives in bright, stable environments and transforms any room into a designer space.','Once a week','Bright indirect light','Indoor Plants','7 in stock')">
+                    <div class="product-image">
+                    <img src="././images/fiddle.png" alt="Fiddle Leaf Fig" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Fiddle Leaf Fig</h3>
+                    <p id="card-font-price">Rs.3000</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.3750</del> <small>20% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Strawberry Seeds','././images/strawberry.png','Rs.420','Rs.437','3','Premium quality strawberry seeds for home gardens and balconies. Produces sweet, juicy fruits within a single growing season.','Regularly, keep moist','Full sun','Seeds','25 in stock')">
+                    <div class="product-image">
+                    <img src="././images/strawberry.png" alt="Strawberry Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Strawberry Seeds</h3>
+                    <p id="card-font-price">Rs.420</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.437</del> <small>3% off</small></p>
+                    </div>
+                </div>
+            <div>
+        </div>
+        </div>
+        </section>
+        <!--second section-->
+        <section>
+            <div class="container block">
+                <div class="card" onclick="openModal('Peperomia','././images/Peperomia.png','Rs.1670','Rs.1875','11','A charming, low-maintenance succulent-like plant with fleshy, textured leaves. Great for desks, shelves, and small spaces.','Every 10 days','Low to medium indirect light','Indoor Plants','15 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Peperomia.png" alt="Succulent" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Peperomia</h3>
+                    <p id="card-font-price">Rs.1670</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.1875</del> <small>11% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Snake Plant','././images/snake.png','Rs.2250','Rs.2500','9','One of the hardiest indoor plants, the Snake Plant purifies air and tolerates low light and irregular watering — perfect for beginners.','Every 2–3 weeks','Any light condition','Indoor Plants','20 in stock')">
+                    <div class="product-image">
+                    <img src="././images/snake.png" alt="Snake Plant" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Snake Plant</h3>
+                    <p id="card-font-price">Rs.2250</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.2500</del><small>9% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Mint Seeds','././images/mint.png','Rs.200','Rs.210','5','Fresh, aromatic mint seeds for kitchen gardens. Easy to grow in pots and ideal for teas, cooking, and natural fragrance.','Frequently, keep soil moist','Partial to full sun','Seeds','30 in stock')">
+                    <div class="product-image">
+                    <img src="././images/mint.png" alt="Mint Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Mint Seeds</h3>
+                    <p id="card-font-price">Rs.200</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.210</del> <small>5% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Pruning Gloves','././images/pruning_gloves.png','Rs.600','Rs.625','5','Durable, thorn-resistant pruning gloves with a snug fit. Protect your hands while keeping full dexterity for delicate work.','N/A','N/A','Tools & Equipment','22 in stock')">
+                    <div class="product-image">
+                    <img src="././images/pruning_gloves.png" alt="Pruning Gloves" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Pruning Gloves</h3>
+                    <p id="card-font-price">Rs.600</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.625</del> <small>5% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--third section-->
+        <section>
+            <div class="container block">
+                <div class="card" onclick="openModal('Watering Can','././images/watering_can.png','Rs.800','','','A classic, well-balanced watering can with a long spout for precise watering. Holds 5 litres — great for both indoor and outdoor plants.','N/A','N/A','Tools & Equipment','10 in stock')">
+                    <div class="product-image">
+                    <img src="././images/watering_can.png" alt="Watering Can" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Watering Can</h3>
+                    <p id="card-font-price">Rs.800</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Hand Trowel','././images/handtrowel.png','Rs.600','Rs.625','4','Stainless steel hand trowel with a comfortable grip handle. Ideal for digging, transplanting seedlings, and mixing soil in pots.','N/A','N/A','Tools & Equipment','16 in stock')">
+                    <div class="product-image">
+                    <img src="././images/handtrowel.png" alt="Hand Trowel" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Hand Trowel</h3>
+                    <p id="card-font-price">Rs.600</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.625</del> <small>4% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Beans Seeds','././images/beans.png','Rs.320','','','High-germination beans seeds suited to Nepal climate. Great for kitchen gardens and produces a generous harvest.','Regularly, keep soil moist','Full sun','Seeds','40 in stock')">
+                    <div class="product-image">
+                    <img src="././images/beans.png" alt="Beans Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Beans Seeds</h3>
+                    <p id="card-font-price">Rs.320</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Cucumber Seeds','././images/cucumber.png','Rs.440','Rs.550','20','Crisp, fast-growing cucumber seeds perfect for home gardens. Thrives in warm weather and yields abundantly with minimal care.','Daily in summer','Full sun','Seeds','28 in stock')">
+                    <div class="product-image">
+                    <img src="././images/cucumber.png" alt="Cucumber Seeds" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Cucumber Seeds</h3>
+                    <p id="card-font-price">Rs.440</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.550</del> <small>20% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--fourth section-->
+        <section>
+            <div class="container block">
+                <div class="card" onclick="openModal('Compost Bin','././images/compost_bin.jpeg','Rs.2275','Rs.3500','35','A sturdy, ventilated compost bin that turns kitchen and garden waste into rich organic fertilizer. Eco-friendly and easy to use.','N/A','N/A','Eco & Sustainability','5 in stock')">
+                    <div class="product-image">
+                    <img src="././images/compost_bin.jpeg" alt="Composit Bin" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Compost Bin</h3>
+                    <p id="card-font-price">Rs.2275</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.3500</del> <small>35% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Beeswax Wrap','././images/beewax.jpeg','Rs.4200','Rs.5000','16','Natural, reusable beeswax food wraps — a plastic-free alternative for storing produce and leftovers. Biodegradable and long-lasting.','N/A','N/A','Eco & Sustainability','8 in stock')">
+                    <div class="product-image">
+                    <img src="././images/beewax.jpeg" alt="Bee wax wrap" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Beeswax Wrap</h3>
+                    <p id="card-font-price">Rs.4200</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.5000</del> <small>16% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Bamboo Toothbrush','././images/brush.jpeg','Rs.140','Rs.150','6','Eco-conscious bamboo toothbrush with soft bristles. Compostable handle for a zero-waste daily routine.','N/A','N/A','Eco & Sustainability','50 in stock')">
+                    <div class="product-image">
+                    <img src="././images/brush.jpeg" alt="Bamboo Toothbrush" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Bamboo Toothbrush</h3>
+                    <p id="card-font-price">Rs.140</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.150</del> <small>6% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Moisture Meter','././images/moister_meter.jpeg','Rs.3735','Rs.4500','17','A precision moisture meter that accurately reads soil water content. Prevents both overwatering and underwatering your plants.','N/A','N/A','Tools & Equipment','9 in stock')">
+                    <div class="product-image">
+                    <img src="././images/moister_meter.jpeg" alt="Moisture meter" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Moisture Meter</h3>
+                    <p id="card-font-price">Rs.3735</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.4500</del> <small>17% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--fifth section-->
+        <section>
+            <div class="container block">
+                <div class="card" onclick="openModal('Soil PH Meter','././images/ph_meter.jpeg','Rs.1300','Rs.1500','13','A digital soil pH meter for testing acidity and alkalinity levels. Helps you choose the right fertiliser and improve plant health.','N/A','N/A','Tools & Equipment','11 in stock')">
+                    <div class="product-image">
+                    <img src="././images/ph_meter.jpeg" alt="Soil Ph meter" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Soil PH Meter</h3>
+                    <p id="card-font-price">Rs.1300</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.1500</del> <small>13% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Plant Heater','././images/plant_heater.jpeg','Rs.4500','Rs.5000','10','A low-wattage plant heating mat that maintains optimal soil temperature for seed germination and root growth in cooler climates.','N/A','N/A','Tools & Equipment','6 in stock')">
+                    <div class="product-image">
+                    <img src="././images/plant_heater.jpeg" alt="Plant Heater" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Plant Heater</h3>
+                    <p id="card-font-price">Rs.4500</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.5000</del> <small>10% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Seedling Tray','././images/seedling_trays.jpeg','Rs.150','','','Multi-cell seedling starter trays for germinating seeds indoors. Reusable, lightweight, and ideal for starting a wide variety of plants.','Keep moist until germination','Grow light or bright window','Tools & Equipment','35 in stock')">
+                    <div class="product-image">
+                    <img src="././images/seedling_trays.jpeg" alt="Seedling Tray" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Seedling Tray</h3>
+                    <p id="card-font-price">Rs.150</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Shade Net','././images/shed_net.jpeg','Rs.3750','Rs.6250','40','UV-stabilised shade netting for protecting plants from intense sun, frost, and wind. Easy to install over raised beds or greenhouses.','N/A','N/A','Tools & Equipment','4 in stock')">
+                    <div class="product-image">
+                    <img src="././images/shed_net.jpeg" alt="Shade Net" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Shade Net</h3>
+                    <p id="card-font-price">Rs.3750</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.6250</del> <small>40% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--sixth section-->
+        <section>
+            <div class="container block">
+                <div class="card" onclick="openModal('Wooden Planter Box','././images/water-planter-box.jpeg','Rs.4200','Rs.5000','16','Handcrafted cedar wood planter box with drainage holes. Weather-resistant and beautiful on balconies, patios, or indoors.','As per plant','As per plant','Pots & Planters','7 in stock')">
+                    <div class="product-image">
+                    <img src="././images/water-planter-box.jpeg" alt="Wooden Planter Box" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Wooden Planter Box</h3>
+                    <p id="card-font-price">Rs.4200</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.5000</del> <small>16% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('365D Water Sprinkler','././images/water_sprinkler.jpeg','Rs.150','','','A 360° rotating garden sprinkler that delivers even water coverage across your lawn or garden beds. Connects to any standard hose.','N/A','N/A','Tools & Equipment','20 in stock')">
+                    <div class="product-image">
+                    <img src="././images/water_sprinkler.jpeg" alt="Water Sprinkler" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">365D Water Sprinkler</h3>
+                    <p id="card-font-price">Rs.150</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Automatic Drip Irrigation','././images/Automatic Drip Irrigation System.png','Rs.300','Rs.350','14','A timer-based drip irrigation kit that keeps your plants watered even when you are away. Adjustable drip rate, easy to set up.','Automated','N/A','Tools & Equipment','13 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Automatic Drip Irrigation System.png" alt="Automatic Drip Irrigation System" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Automatic Drip Irrigation</h3>
+                    <p id="card-font-price">Rs.300</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.350</del> <small>14% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Coco Peat Compost','././images/Coco Peat Compost.png','Rs.750','Rs.1000','25','Organic coco peat compost that improves soil structure, water retention, and aeration. 100% natural and eco-friendly growing medium.','N/A','N/A','Fertilisers & Soil','17 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Coco Peat Compost.png" alt="Coco Peat Compost" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Coco Peat Compost</h3>
+                    <p id="card-font-price">Rs.750</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.1000</del> <small>25% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--seventh section-->
+        <section>
+            <div class="container block">
+                <div class="card" onclick="openModal('Mustard Cake Heena Mal','././images/Mustard CakePeena Mal.png','Rs.399','','','A natural organic fertiliser made from cold-pressed mustard cake. Rich in nitrogen, phosphorus, and potassium for lush plant growth.','N/A','N/A','Fertilisers & Soil','24 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Mustard CakePeena Mal.png" alt="Mustard Cake Heena Mal" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Mustard Cake Heena Mal</h3>
+                    <p id="card-font-price">Rs.399</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Rope','././images/Rope.png','Rs.99','Rs.150','34','Heavy-duty jute rope for trellising, plant support, staking, and garden crafts. Biodegradable and gentle on plant stems.','N/A','N/A','Tools & Equipment','45 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Rope.png" alt="Rope" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Rope</h3>
+                    <p id="card-font-price">Rs.99</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.150</del> <small>34% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Neem Oil','././images/Triple-Action-Neem-Oil-8.jpg','Rs.375','Rs.450','20','Cold-pressed pure neem oil — a natural, broad-spectrum pesticide and fungicide. Safe for organic gardening and beneficial insects.','N/A','N/A','Fertilisers & Soil','19 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Triple-Action-Neem-Oil-8.jpg" alt="Neem Oil" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Neem Oil</h3>
+                    <p id="card-font-price">Rs.375</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.450</del> <small>20% off</small></p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('Protect Plus','././images/Protect Plus 5 kg[6]_0.png','Rs.525','Rs.665','17','A multi-purpose plant protection spray that guards against pests, mildew, and disease. Suitable for vegetables, flowers, and fruit trees.','N/A','N/A','Fertilisers & Soil','14 in stock')">
+                    <div class="product-image">
+                    <img src="././images/Protect Plus 5 kg[6]_0.png" alt="Protect Plus" style="border-top-left-radius: 25px; border-top-right-radius: 25px;" width="100%" height="320px">
+                    </div>
+                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    <div class="product-detail">
+                    <h3 id="card-font">Protect Plus</h3>
+                    <p id="card-font-price">Rs.525</p>
+                    <p id="card-font-price-off"><del style="color: rgb(132, 142, 132);">Rs.665</del> <small>17% off</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--footer section-->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-container1">
+                    <!--contact section-->
+                    <div class="footer-card">
+                        <a href="Contact.html" style="text-decoration: none; cursor: pointer;
+                        color: #FFFFFF;"><h3>Contact Us</h3></a>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">mail</span>
+                            <p>Email: UrbanSprout@sprout.com</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <p>Address: Pokhara, Nepal</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">phone</span>
+                            <p>Phone: +977 9785214697</p>
+                        </div>
+                    </div>
+                    <!--Links section-->
+                    <div class="footer-card">
+                        <h3>Quick links</h3>
+                        <ul class="list">
+                            <li><a href="Homepage.html" class="list-font">Home</a></li>
+                            <li><a href="Products.html" class="list-font">Products</a></li>
+                            <li><a href="Blog.html" class="list-font">Blog</a></li>
+                            <li><a href="Research.html" class="list-font">Research</a></li>
+                            <li><a href="About.html" class="list-font">About Us</a></li>
+                            <li><a href="Contact.html" class="list-font">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!--follow us section-->
+                    <div class="footer-card">
+                        <h3>Follow Us</h3>
+                        <div style="display: flex; gap: 20px;">
+                        <a id="follow-button" href="https://www.instagram.com/icp.nepal/"><img src="././images/instagram.png" style="width:40px; height:40px;"></a>
+                        <a id="follow-button" href="https://www.facebook.com/informaticscollegepkr/"><img src="././images/facebook.png" style="width:40px; height:40px;"></a>
+                        <a id="follow-button" href="https://np.linkedin.com/company/informatics-college-pokhara"><img src="././images/linkedin.png" style="width:40px; height:40px;"></a>
+                        </div>
+                    </div>
+                    <!--Company info section-->
+                    <div id="company-info-card">
+                        <a href="Homepage.html" id="company-info"><img src="././images/navlogo.png" alt="company logo" style="height: 60px; width: 180px;"></a>
+                        <p>At Urban Sprout, we believe there's something special about caring for a garden — watching things grow, getting your hands in the soil, and creating a space you can be proud of. We're here to make that experience easier and more enjoyable with gardening tools you can rely on. Whether you're planting your first flowers or maintaining a garden you've loved for years, our tools are made to feel comfortable, last long, and help you get the job done right. For us, it's not just about selling tools — it's about supporting the joy of gardening and helping every customer bring their outdoor space to life.</p>
+                    </div>
+                </div>
+                <div>
+                    <p style="color: #FFFFFF; text-align: center;">&copy; 2026 Urban Sprout. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <!--Javascript for add to cart button-->
+        <script src="index.js"></script>
+    </body>
+</html>
