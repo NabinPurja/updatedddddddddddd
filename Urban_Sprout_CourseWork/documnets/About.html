@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="././images/gardenforge1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Urban Sprout - About Us</title>
+    <style>
+        /*container for members details */
+        .member-container{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 680px;
+        }
+
+        /*card for each member*/
+        .member-card{
+            background-color: #FFFFFF;
+            margin: 80px;
+            margin-top: 0;
+            margin-right: 0;
+            height: 550px;
+            width: 1320px;
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* hover effect for */
+        .member-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 10px rgba(67, 160, 71, 0.6);;
+        }
+        /* image section */
+        .member-img{
+            border-radius: 25px;
+            height: 540px;
+            width: 45%; 
+        }
+
+        /*details section */
+        .member-details{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding: 36px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /*member name style*/
+        .member-name{
+            text-align: left;
+            margin-bottom: 0;
+            font-size: 28px;
+            color: #1B5E20;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /*member role style*/
+        .member-role{
+            font-size: 15px;
+            color: #66BB6A;
+            margin: 0;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /*address section */
+        .member-address{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /*member education font*/
+        .member-label{
+            font-size: 12px;
+            color: #2E7D32;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        /*detail list styling*/
+        .detail-list{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .detail-list li {
+            font-size: 14px;
+            color: #444;
+            background-color: #F1F8E9;
+            border-radius: 25px;
+            padding: 4px;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+        <!--navigation bar-->
+               <div>
+        <nav>
+            <div class="logo_shift">
+            <a href="Homepage.html" class="logo">
+            <img src="././images/navlogo.png" id="nav_logo" alt="logo">
+            </a>
+            </div>
+            <!--search bar section-->
+            <div id="navbar">
+                <form>
+                <input type="text" placeholder="Search....." class="search">
+                <button type="submit" id="search-button">🔍︎</button>
+                </form>
+            </div>
+            <div>
+                <ul id="navbar">
+                    <li><a id="abc" class="home" href="Homepage.html">Home</a></li>
+                    <li><a id="abc" href="Products.html">Products</a></li>
+                    <li><a id="abc" class="blog" href="Blog.html">Blog</a></li>
+                    <li><a id="abc" href="Research.html">Research</a></li>
+                    <li><a id="abc" class="about" href="About.html">About Us</a></li>
+                    <li><a id="abc" class="contact" href="Contact.html">Contact Us</a></li>
+                </ul>
+                </div>
+           </nav>
+        </div>
+        </section>
+        <!-- main section of products page -->
+    <main>
+        <div>
+            <h3 class="font">About Us</h3>
+        </div>
+        <!--details section about team member-->
+        <section>
+            <div class="member-container">
+                <!--First member details-->
+                <div class="member-card">
+                    <div class="member-img">
+                        <img src="././images/Prince_Thapa.jpeg" alt="Team member 1" height="100%" weidth="100%" style="object-fit: cover;">
+                    </div>
+                    <div class="member-details">
+                        <h2 class="member-name">Prince Thapa</h2>
+                        <p class="member-role">Content &amp; Research</p>
+                        <div class="member-address">
+                            <span class="material-symbols-outlined">location_on</span>
+                                Pokhara, Nepal
+                        </div>
+                        <p class="member-label">Education</p>
+                            <ul class="detail-list">
+                                <li>BSc (Hons) Computing — Informatics College Pokhara</li>
+                                <li>+2, Sagarmatha Secondary School</li>
+                            </ul>
+                        <p class="member-label">Technical Skills</p>
+                            <ul class="detail-list">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                                <li>Java</li>
+                                <li>MySQL</li>
+                                <li>Ms Word</li>
+                            </ul>
+                        <p class="member-label">Experience</p>
+                            <ul class="detail-list">
+                                <li>1st Year Student</li>
+                                <li>HTML &amp; CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                    </div>
+                </div>
+                
+                <!--Second member details-->
+                <div class="member-card">
+                    <div class="member-details">
+                        <h2 class="member-name">Kushal Karki</h2>
+                        <p class="member-role">Frontend Developer &amp; Research</p>
+                        <div class="member-address">
+                            <span class="material-symbols-outlined">location_on</span>
+                                Pokhara, Nepal
+                        </div>
+                        <p class="member-label">Education</p>
+                            <ul class="detail-list">
+                                <li>BSc (Hons) Computing — Informatics College Pokhara</li>
+                                <li>+2, Sagarmatha Secondary School</li>
+                            </ul>
+                        <p class="member-label">Technical Skills</p>
+                            <ul class="detail-list">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                                <li>Java</li>
+                                <li>MySQL</li>
+                                <li>C++</li>
+                                <li>Figma</li>
+                            </ul>
+                        <p class="member-label">Experience</p>
+                            <ul class="detail-list">
+                                <li>1st Year Student</li>
+                                <li>HTML &amp; CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                    </div>
+                    <div class="member-img">
+                        <img src="././images/Prince_Thapa.jpeg" alt="Team member 2" height="100%" weidth="100%" style="object-fit: cover;">
+                    </div>
+                </div>
+
+                <!--Third member details-->
+                <div class="member-card">
+                        <div class="member-img">
+                            <img src="././images/Prince_Thapa.jpeg" alt="Team member 3" height="100%" weidth="100%" style="object-fit: cover;">
+                        </div>
+                        <div class="member-details">
+                            <h2 class="member-name">Saurav Ranabhat</h2>
+                            <p class="member-role">UI/UX Designer</p>
+                            <div class="member-address">
+                                <span class="material-symbols-outlined">location_on</span>
+                                    Pokhara, Nepal
+                            </div>
+                            <p class="member-label">Education</p>
+                                <ul class="detail-list">
+                                    <li>BSc (Hons) Computing — Informatics College Pokhara</li>
+                                    <li>+2, Global Collegiate School</li>
+                                </ul>
+                            <p class="member-label">Technical Skills</p>
+                                <ul class="detail-list">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript</li>
+                                    <li>Java</li>
+                                    <li>MySQL</li>
+                                    <li>Figma</li>
+                                    <li>Canva</li>
+                                </ul>
+                            <p class="member-label">Experience</p>
+                                <ul class="detail-list">
+                                    <li>1st Year Student</li>
+                                    <li>HTML &amp; CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Portfolio</li>
+                                </ul>
+                        </div>
+                    </div>
+
+                    <!--Fourth member details-->
+                    <div class="member-card">
+                        <div class="member-details">
+                            <h2 class="member-name">Aayush Tiwari</h2>
+                            <p class="member-role">Content &amp; Research</p>
+                            <div class="member-address">
+                                <span class="material-symbols-outlined">location_on</span>
+                                    Pokhara, Nepal
+                            </div>
+                            <p class="member-label">Education</p>
+                                <ul class="detail-list">
+                                    <li>BSc (Hons) Computing — Informatics College Pokhara</li>
+                                    <li>+2, Prativa Secondary School</li>
+                                </ul>
+                            <p class="member-label">Technical Skills</p>
+                                <ul class="detail-list">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript</li>
+                                    <li>Java</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            <p class="member-label">Experience</p>
+                                <ul class="detail-list">
+                                    <li>1st Year Student</li>
+                                    <li>HTML &amp; CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                        </div>
+                        <div class="member-img">
+                            <img src="././images/Prince_Thapa.jpeg" alt="Team member 4" height="100%" weidth="100%" style="object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!--Fifth member details-->
+                    <div class="member-card">
+                        <div class="member-img">
+                            <img src="././images/Prince_Thapa.jpeg" alt="Team member 5" height="100%" weidth="100%" style="object-fit: cover;">
+                        </div>
+                        <div class="member-details">
+                            <h2 class="member-name">Nabin Purja</h2>
+                            <p class="member-role">Frontend Developer</p>
+                            <div class="member-address">
+                                <span class="material-symbols-outlined">location_on</span>
+                                    Pokhara, Nepal
+                            </div>
+                            <p class="member-label">Education</p>
+                                <ul class="detail-list">
+                                    <li>BSc (Hons) Computing — Informatics College Pokhara</li>
+                                    <li>+2, Sagarmatha Secondary School</li>
+                                </ul>
+                            <p class="member-label">Technical Skills</p>
+                                <ul class="detail-list">
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript</li>
+                                    <li>Java</li>
+                                    <li>MySQL</li>
+                                    <li>Figma</li>
+                                    <li>C++</li>
+                                    <li>Python</li>
+                                </ul>
+                            <p class="member-label">Experience</p>
+                                <ul class="detail-list">
+                                    <li>1st Year Student</li>
+                                    <li>HTML &amp; CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Portfolio</li>
+                                </ul>
+                        </div>
+                    </div>
+
+                    <!--feedback button-->
+                    <div style=" position: relative; left: 700px; padding-bottom: 25px;">
+                        <a class="feedback" href="Contact.html">Feedback</a>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <!--footer section-->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-container1">
+                    <!--contact section-->
+                    <div class="footer-card">
+                        <a href="Contact.html" style="text-decoration: none; cursor: pointer;
+                        color: #FFFFFF;"><h3>Contact Us</h3></a>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">mail</span>
+                            <p>Email: UrbanSprout@sprout.com</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <p>Address: Pokhara, Nepal</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; margin: 0%;">
+                            <span class="material-symbols-outlined">phone</span>
+                            <p>Phone: +977 9785214697</p>
+                        </div>
+                    </div>
+                    <!--Links section-->
+                    <div class="footer-card">
+                        <h3>Quick links</h3>
+                        <ul class="list">
+                            <li><a href="Homepage.html" class="list-font">Home</a></li>
+                            <li><a href="Products.html" class="list-font">Products</a></li>
+                            <li><a href="Blog.html" class="list-font">Blog</a></li>
+                            <li><a href="Research.html" class="list-font">Research</a></li>
+                            <li><a href="About.html" class="list-font">About Us</a></li>
+                            <li><a href="Contact.html" class="list-font">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!--follow us section-->
+                    <div class="footer-card">
+                        <h3>Follow Us</h3>
+                        <div style="display: flex; gap: 20px;">
+                        <a id="follow-button" href="https://www.instagram.com/icp.nepal/"><img src="././images/instagram.png" style="width:40px; height:40px;"></a>
+                        <a id="follow-button" href="https://www.facebook.com/informaticscollegepkr/"><img src="././images/facebook.png" style="width:40px; height:40px;"></a>
+                        <a id="follow-button" href="https://np.linkedin.com/company/informatics-college-pokhara"><img src="././images/linkedin.png" style="width:40px; height:40px;"></a>
+                        </div>
+                    </div>
+                    <!--Company info section-->
+                    <div id="company-info-card">
+                        <a href="Homepage.html" id="company-info"><img src="././images/navlogo.png" alt="company logo" style="height: 60px; width: 180px;"></a>
+                        <p>At Urban Sprout, we believe there’s something special about caring for a garden — watching things grow, getting your hands in the soil, and creating a space you can be proud of. We’re here to make that experience easier and more enjoyable with gardening tools you can rely on. Whether you’re planting your first flowers or maintaining a garden you’ve loved for years, our tools are made to feel comfortable, last long, and help you get the job done right. For us, it’s not just about selling tools — it’s about supporting the joy of gardening and helping every customer bring their outdoor space to life.</p>
+                    </div>
+                </div>
+                <div>
+                    <p style="color: #FFFFFF; text-align: center;">&copy; 2026 Urban Sprout. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
